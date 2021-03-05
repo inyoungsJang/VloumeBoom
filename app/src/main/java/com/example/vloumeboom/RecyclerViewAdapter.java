@@ -25,26 +25,28 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     @NonNull
     @Override
     //아이템 뷰를 위한 뷰홀더 객체를 생성하여 리턴
-    public RecyclerViewAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 
         View view = inflater.inflate(R.layout.activity_main_recycler_view__item, parent, false);
-        RecyclerViewAdapter.ViewHolder viewHolder = new RecyclerViewAdapter.ViewHolder(view);
-
+        ViewHolder viewHolder = new RecyclerViewAdapter.ViewHolder(view);
         return viewHolder;
+
+//        return new ViewHolder(view);
     }
 
     @Override
     // 포지션에 해당하는 데이터를 뷰홀더에 아이템뷰에 표시
+    // 뷰홀더가 재사용될 때 실행되는 메서드
     public void onBindViewHolder(@NonNull RecyclerViewAdapter.ViewHolder holder, int position) {
-        Data data = mData.get(position); //리스트형태의 데이타의 포지션값을 가져옴
-
-        holder.tv_title.setText(data.getTitle());
-
+        //Data data = mData.get(position); //리스트형태의 데이타의 포지션값을 가져옴
+        holder.tv_title.setText(mData.get(position).getTitle());
+        //holder.tv_title.setText(data.getTitle());
     }
 
     @Override
+    //아이템 개수를 조회
     public int getItemCount() {
         return mData.size();
     }

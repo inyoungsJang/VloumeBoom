@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="#FAED7D"
     tools:context=".MainActivity">
 
     <LinearLayout
@@ -13,7 +14,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:padding="10dp">
 
             <com.makeramen.roundedimageview.RoundedImageView
@@ -22,7 +23,7 @@
                 android:layout_height="100dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/testimg"
-                app:riv_corner_radius="30dp"/>
+                app:riv_corner_radius="30dp" />
 
             <TextView
                 android:id="@+id/tv_userProfileText"
@@ -36,14 +37,14 @@
     </LinearLayout>
 
     <LinearLayout
+        android:layout_marginTop="60dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerview_list"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
         </androidx.recyclerview.widget.RecyclerView>
 
     </LinearLayout>
